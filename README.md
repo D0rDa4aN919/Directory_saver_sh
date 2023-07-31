@@ -13,8 +13,8 @@ Make the script executable: chmod +x file_organizer.sh
 Run the script: ./file_organizer.sh
 Supported File Extensions
 The script organizes files with the following extensions:
-<h3 align="center">File formats:</h3>
-<h4 align="center">- Images</h4>
+<h3>File formats:</h3>
+#- Images
   - jpg
   - png
   - gif
