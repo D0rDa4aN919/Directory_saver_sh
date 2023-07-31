@@ -25,7 +25,7 @@ The script organizes files with the following extensions:
   - svg
   - ico
   - psd
-- Documents
+- <h4>Documents</h4>
   - pdf
   - json
   - csv
@@ -41,8 +41,7 @@ The script organizes files with the following extensions:
   - odp
   - rtf
   - xml
-- Scripts
-
+- <h4>Scripts</h4>
   - sh
   - py
   - c
@@ -57,8 +56,7 @@ The script organizes files with the following extensions:
   - ps1
   - bat
   - cmd
-- Audios
-
+- <h4>Audios</h4>
   - mp3
   - wav
   - ogg
@@ -73,8 +71,7 @@ The script organizes files with the following extensions:
   - mid
   - amr
   - ra
-- Videos
-
+- <h4>Videos</h4>
   - mp4
   - avi
   - mkv
