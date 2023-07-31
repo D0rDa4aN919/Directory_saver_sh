@@ -5,9 +5,8 @@ In addition to organizing files, the File Organizer Script also ensures data saf
 
 <h2 align="center">Prerequisites</h2>
 Make sure you have the following installed on your system:
-
-Bash (usually pre-installed on Linux and macOS)
-find command (usually available on most Unix-like systems)
+- Bash (usually pre-installed on Linux and macOS)
+- find command (usually available on most Unix-like systems)
 <h2 align="center">Usage</h2>
 Download the script to your system.
 Make the script executable: chmod +x file_organizer.sh
