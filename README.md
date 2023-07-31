@@ -31,7 +31,8 @@ The script will organize files in the specified <user_direcotry>/file_structure 
 
 Please note that the script will not delete any files but only organize them. Any sub-directories that become empty after the organization will be removed.
 
-<h2 align="center" style="color: red;">Important Note</h2>
+<h2 align="center" style="color:red;">Important Note</h2>
+
 Before running any file organization script, it is crucial to make a backup of your important files to avoid any data loss. The File Organizer Script takes this aspect into consideration by automatically backing up the user's home directory to /var/backup/.
 
 <h2 align="center">
