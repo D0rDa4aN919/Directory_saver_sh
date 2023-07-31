@@ -182,4 +182,4 @@ fi
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # For more details, see the LICENSE file in the root directory of this repository
-# or visit https://github.com/D0rDa4aN919/Directory_saver_sh.
+# or visit https://github.com/D0rDa4aN919/File_Organizer_Sh_Script.
