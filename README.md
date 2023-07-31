@@ -17,81 +17,20 @@ Make sure you have the following installed on your system:
 The script organizes files with the following extensions:
 
 <h3>File formats:</h3>
-<h4>Images</h4>
-- jpg
-- png
-- gif
-- jpeg
-- bmp
-- tiff
-- webp
-- svg
-- ico
-- psd
+h4>Images</h4>
+jpg, png, gif, jpeg, bmp, tiff, webp, svg, ico, psd
 
 <h4>Documents</h4>
-- pdf
-- json
-- csv
-- txt
-- doc
-- docx
-- xls
-- xlsx
-- ppt
-- pptx
-- odt
-- ods
-- odp
-- rtf
-- xml
+pdf, json, csv, txt, doc, docx, xls, xlsx, ppt, pptx, odt, ods, odp, rtf, xml
 
 <h4>Scripts</h4>
-- sh
-- py
-- c
-- cpp
-- java
-- js
-- php
-- pl
-- rb
-- swift
-- bash
-- ps1
-- bat
-- cmd
+sh, py, c, cpp, java, js, php, pl, rb, swift, bash, ps1, bat, cmd
 
 <h4>Audios</h4>
-- mp3
-- wav
-- ogg
-- flac
-- m4a
-- aac
-- wma
-- aiff
-- ape
-- alac
-- opus
-- mid
-- amr
-- ra
+mp3, wav, ogg, flac, m4a, aac, wma, aiff, ape, alac, opus, mid, amr, ra
 
-<h4>Videos</h4>
-- mp4
-- avi
-- mkv
-- gif
-- wmv
-- m4v
-- m4p
-- mpg
-- mpeg
-- flv
-- nsv
-- mxf
-- viv
+ <h4>Videos</h4>
+mp4, avi, mkv, gif, wmv, m4v, m4p, mpg, mpeg, flv, nsv, mxf, viv
 
 <h2 align="center">Script Execution</h2>
 The script will organize files in the specified <user_direcotry>/file_structure directory. It will create sub-directories for each category (images, documents, videos, scripts, and audios) and move the respective files into these sub-directories based on their file extensions.
