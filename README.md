@@ -14,7 +14,7 @@ Run the script: ./file_organizer.sh
 Supported File Extensions
 The script organizes files with the following extensions:
 <h3>File formats:</h3>
-#- Images
+- <h4>Images</h4>
   - jpg
   - png
   - gif
