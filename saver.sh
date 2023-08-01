@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 ##############################################################################
 # File Organizer SH - Bash Script
 # Description: A bash script to organize files into specific directories based on their file extensions and backup the user directory.
@@ -37,8 +37,9 @@ function main(){
 
 function backup_dir() {
     backup_path="/var/backup/"
+    this_path=$(pwd)
     if [ -d "$backup_path" ]; then
-        echo -e "${Blue}${Bold}Backup directory already exists${Reset}."
+        echo -e "${Blue}${Bold}Backup directory already exists.${Reset}"
     else
         echo -e "${Red}${Bold}Backup directory not found. Creating it...${Reset}"
         mkdir -p "$backup_path" || {
@@ -68,7 +69,7 @@ function backup_dir() {
        exit 1
    }
    mv "$2" "$2.zip" "backup_$2"
-   cd -
+   cd "$this_path"
 }
 
 function check_install_zip() {
