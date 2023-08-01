@@ -5,7 +5,11 @@
 # Author: Dor Dahan
 # License: MIT (See details in the LICENSE file or at the end of this script)
 ##############################################################################
-
+Green='\033[0;32m'
+Reset='\033[0m' 
+Red='\033[0;31m'
+Bold='\033[1m'
+Blue='\033[0;34m'
 user=$(whoami)
 
 if [ "$user" == "root" ]; then
@@ -34,24 +38,24 @@ function main(){
 function backup_dir() {
     backup_path="/var/backup/"
     if [ -d "$backup_path" ]; then
-        echo "Backup directory already exists."
+        echo -e "${Blue}${Bold}Backup directory already exists${Reset}."
     else
-        echo "Backup directory not found. Creating it..."
+        echo -e "${Red}${Bold}Backup directory not found. Creating it...${Reset}"
         mkdir -p "$backup_path" || {
-            echo "Error: Failed to create backup directory."
+            echo "-e ${Red}${Bold}Error: Failed to create backup directory.${Reset}"
             exit 1
         }
     fi
     cd "$backup_path" || {
-        echo "Error: Failed to enter backup directory."
+        echo -e "${Red}${Bold}Error: Failed to enter backup directory.${Reset}"
         exit 1
     }
     mkdir -p "$2" || {
-        echo "Error: Failed to create backup directory."
+        echo -e "${Red}${Bold}Error: Failed to create backup directory.${Reset}"
         exit 1
     }
     cd "$2" || {
-        echo "Error: Failed to enter backup directory."
+        echo -e "${Red}${Bold}Error: Failed to enter backup directory.${Reset}"
         exit 1
     }
     cp -r "$1" .
@@ -60,7 +64,7 @@ function backup_dir() {
     chown "$user":"$user" "$2"
     zip "$2.zip" "$2"
     mkdir -p "backup_$2" || {
-       echo "Error: Failed to create backup directory."
+       echo -e "${Red}${Bold}Error: Failed to create backup directory.${Reset}"
        exit 1
    }
    mv "$2" "$2.zip" "backup_$2"
@@ -68,8 +72,9 @@ function backup_dir() {
 }
 
 function check_install_zip() {
+    echo -e "${Blue}${Bold}Starting installation check...${Reset}"
     if ! command -v zip &>/dev/null; then
-        echo "zip command not found. Installing zip..."
+        echo -e "${Blue}${Bold}Zip command not found. Installing zip...${Reset}"
         if command -v apt-get &>/dev/null; then
             sudo apt-get update >/dev/null
             sudo apt-get install -y zip >/dev/null
@@ -80,15 +85,15 @@ function check_install_zip() {
         elif command -v pacman &>/dev/null; then
             sudo pacman -Syu --noconfirm zip >/dev/null 
         else
-            echo "Error: Cannot install zip. Unsupported package manager."
+            echo -e "${Red}${Bold}Error: Cannot install zip. Unsupported package manager.${Reset}"
             exit 1
         fi
-
+        
         if ! command -v zip &>/dev/null; then
-            echo "Error: Failed to install zip. Please install it manually."
+            echo -e "${Red}${Bold}Error: Failed to install zip. Please install it manually.${Reset}"
             exit 1
         fi
-        echo "zip installed successfully."
+        echo -e "${Green}${Bold}zip installed successfully.${Reset}"
     fi
 }
 
@@ -108,14 +113,14 @@ function num_check() {
     if [ $1 -eq 2 ]; then
         mkdir -p "$2" 2>/dev/null
     else
-        echo "This folder is already there"
+        echo -e "${Blue}${Bold}This folder is already there${Reset}"
     fi
     cd "$2"
 }
 
 function find_elements(){
     elements=$(find "$main_directory" -type f -name "*$1" 2>/dev/null)
-    IFS=$'\n'  # Set the IFS to handle spaces correctly
+    IFS=$'\n'
     for name in $elements; do
         mv "$name" "$2"
     done
@@ -129,7 +134,6 @@ function set_options(){
         path="$1"
         mkdir "$path" 2>/dev/null
     fi
-
     for ext in "${@:2}"; do
         find_elements "$ext" "$path"
     done
@@ -150,10 +154,10 @@ function final_step(){
     for value in $listing_folder; do
         listing=$(ls "$value")
         if [ -z "$listing" ]; then
-            echo "The folder '$value' is empty."
+            echo -e "${Red}${Bold}The folder '$value' is empty.${Reset}"
             rmdir "$value" 2>/dev/null
         else
-            echo "The folder '$value' is not empty."
+            echo -e "${Green}${Bold}The folder '$value' is not empty.${Reset}"
         fi
     done
 }
