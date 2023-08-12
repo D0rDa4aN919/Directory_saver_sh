@@ -17,7 +17,7 @@ Make sure you have the following installed on your system:
 The script organizes files with the following extensions:
 
 <h3>File formats:</h3>
-h4>Images</h4>
+<h4>Images</h4>
 jpg, png, gif, jpeg, bmp, tiff, webp, svg, ico, psd
 
 <h4>Documents</h4>
